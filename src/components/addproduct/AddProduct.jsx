@@ -25,8 +25,8 @@ export default function AddProduct() {
   });
   const imageHandler = (e) => {
     const imageFile = e.target.files[0];
-    if (imageFile.size > 200000) {
-      Warning("warning", "please select under 200kb image file!");
+    if (imageFile.size > 400000) {
+      Warning("warning", "please select under 400kb image file!");
     } else {
       if (imageFile.type === "image/png") {
         setImage(imageFile);
@@ -43,8 +43,8 @@ export default function AddProduct() {
     }
     let images = [];
     for (let i = 0; i < imageFiles.length; i++) {
-      if (imageFiles[i].size > 200000) {
-        Warning("warning", "please select under 200kb image file!");
+      if (imageFiles[i].size > 300000) {
+        Warning("warning", "please select under 300kb image file!");
         return false;
       }
       images.push(imageFiles[i]);
