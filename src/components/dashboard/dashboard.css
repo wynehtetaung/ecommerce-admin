@@ -1,0 +1,26 @@
+.admin-dashboard {
+  background-color: #e0e0e0;
+  padding: 8px;
+  width: 100%;
+}
+.user-list {
+  display: flex;
+  flex-direction: column;
+}
+.user-list-title,
+.user-list-content {
+  display: flex;
+  justify-content: space-around;
+}
+.user-list-content {
+  background: #e1e1;
+}
+.user-list-content button {
+  width: 100px;
+  height: 30px;
+  margin-top: 10px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid red;
+  background: red;
+}
