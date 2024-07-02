@@ -8,12 +8,15 @@ import { OrderList } from "../../components/orderlist/OrderList";
 import { OrderProduct } from "../../components/orderproduct/OrderProduct";
 import { useState } from "react";
 import Dashboard from "../../components/dashboard/Dashboard";
+import { Loading } from "../../components/alert_message/Loading";
+import { Toast } from "../../components/alert_message/Toast";
 
 export default function Admin() {
   const [login, setLogin] = useState(false);
   const inputRef = useRef();
 
   const loginHandler = async () => {
+    Loading("Please Wait!");
     const res = await fetch(
       `https://ecommerce-project-api-s1c9.onrender.com/api/v1/user/admin-login`,
       {
@@ -26,6 +29,7 @@ export default function Admin() {
     );
     const { success } = await res.json();
     setLogin(success);
+    Toast("success", "Admin Login Success!", 2000);
   };
   return (
     <>

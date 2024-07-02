@@ -77,7 +77,6 @@ export default function AddProduct() {
     productDetails.showcase = multiple_url;
     productDetails.size = storeSize;
     productDetails.description = descriptionRef.current.value;
-    if (url && multiple_url) setLoading(false);
     (async () => {
       const res = await fetch(
         "https://ecommerce-project-api-s1c9.onrender.com/api/v1/product/add",
@@ -101,6 +100,7 @@ export default function AddProduct() {
         }
       );
       if (res.ok) {
+        if (url && multiple_url && res.ok) setLoading(false);
         Toast("success", "Add Product Done!", 2000);
         setTimeout(() => {
           navigate("/listproduct");
